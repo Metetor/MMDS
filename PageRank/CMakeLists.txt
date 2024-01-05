@@ -1,0 +1,2 @@
+PROJECT(BS_PageRank)
+ADD_SUBDIRECTORY(src bin)
