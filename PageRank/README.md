@@ -1,6 +1,7 @@
 # PageRank
 naive PageRank algorithm and Block_striped algorithm (C++)
 
+networkx version(python)  has been added into .py
 - Data Format:FromNodeID/ToNodeID
 ## networkx实现(作业禁止使用)
 调用networkx库相关函数求解，用作结果对照
@@ -12,7 +13,18 @@ pagerank实现在networkx.algorithms.link_analysis的pagerank_alg.py
 
 - 最终对比C++ naive/BS的实现同nx的结果误差在1e-5，top100的结果只有些许结点存在偏差
 
+## 增加一些功能
+[外部排序]
+
+[并行化处理]
+
+[block_stripe实现细节检查]
+
+[first todo] 
+
+[其他pagerank变体]
 ## python 实现
+[TODO]
 
 ## C++ 实现
 
@@ -27,6 +39,8 @@ options:
 -m mode(0 -> naive mode/1->Block_striped mode)
 
 -r training round
+
+
 
 ## theoretical Analysis
 

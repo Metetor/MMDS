@@ -1,3 +1,4 @@
+// encoding = GB2312
 #ifndef __PAGERANK_H__
 #define __PAGERANK_H__
 #include <string>
@@ -10,19 +11,19 @@ using std::string;
 using std::unordered_map;
 using std::vector;
 class PageRank
-{ // pagerankï¿½ï¿½Êµï¿½ï¿½
+{ // pagerankÀàÊµÏÖ
 public:
 	// Edge=(V,E)
 
-	// edgeï¿½Ä±ßºÍ½Úµï¿½
+	// edgeµÄ±ßºÍ½Úµã
 	set<pair<int, int>> E;
 	set<int> V;
 	int BlockSize = 500;
 	int NodeCnt, MaxPageNum;
-	unordered_map<int, set<int>> matrix; // ï¿½ï¿½Ê¼Ï¡ï¿½ï¿½ï¿½ï¿½ï¿½(×ªï¿½Æ¾ï¿½ï¿½ï¿½M)
-	vector<double> w;					 // È¨ï¿½Ø¾ï¿½ï¿½ï¿½w;
-	double Beta = 0.85, RandomWalk, S;	 // ï¿½ï¿½Öµ,RandomWalk=(1-Beta)/NodeCnt
-	double thresold = 1e-5, dev = 1;	 // È¨ï¿½Ø¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+	unordered_map<int, set<int>> matrix; // ³õÊ¼Ï¡Êè¾ØÕó(×ªÒÆ¾ØÕóM)
+	vector<double> w;					 // È¨ÖØ¾ØÕów;
+	double Beta = 0.85, RandomWalk, S;	 // ¦ÂÖµ,RandomWalk=(1-Beta)/NodeCnt
+	double thresold = 1e-5, dev = 1;	 // È¨ÖØ¾ØÕóÎó²îãĞÖµ
 
 	PageRank(){};
 	~PageRank(){};
@@ -30,13 +31,13 @@ public:
 	// Load Data
 	void load_data(string fname);
 	// Handle Dead Ends Node
-	void HandleDeadEnds();	 // ï¿½ï¿½Dead Endsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½Úµã£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	void Block_Stripe_pre(); // ï¿½Ö¿ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½
+	void HandleDeadEnds();	 // ½«Dead EndsÁ¬½ÓÖÁÈ«²¿½Úµã£¬°üÀ¨×ÔÉí
+	void Block_Stripe_pre(); // ·Ö¿éÔ¤´¦Àí
 
-	bool WeightInit(); // ï¿½ï¿½Ê¼ï¿½ï¿½È¨ï¿½Ø¾ï¿½ï¿½ï¿½
-	void BS_WeightUpdate(int r = 20);
-	void WeightUpdate(int r = 20); // È¨ï¿½Ø¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	void WriteNode(string fname, string rname = "");
-	void WriteTop100(string fname, string rname = "");
+	void WeightInit(); // ³õÊ¼»¯È¨ÖØ¾ØÕó
+	void BS_WeightUpdate();
+	void WeightUpdate(); // È¨ÖØ¾ØÕóµü´ú¸üĞÂ
+	void WriteNode(string fname);
+	void WriteTop100(string fname);
 };
 #endif // !__PAGERANK_H__
