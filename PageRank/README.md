@@ -13,6 +13,7 @@ pagerank实现在networkx.algorithms.link_analysis的pagerank_alg.py
 
 - 最终对比C++ naive/BS的实现同nx的结果误差在1e-5，top100的结果只有些许结点存在偏差
 
+<!--
 ## 增加一些功能
 [外部排序]
 
@@ -25,7 +26,7 @@ pagerank实现在networkx.algorithms.link_analysis的pagerank_alg.py
 [其他pagerank变体]
 ## python 实现
 [TODO]
-
+-->
 ## C++ 实现
 
 options:
